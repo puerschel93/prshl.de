@@ -40,7 +40,7 @@ export const MouseStateRenderer: FC = () => {
         initial={{ opacity: MIN_OPACITY }}
         animate={animation("init")}
         exit={animation("exit")}
-        className="fixed inset-10 pointer-events-none"
+        className="pointer-events-none fixed inset-10"
       >
         {mouseState?.renderId && (
           <Image

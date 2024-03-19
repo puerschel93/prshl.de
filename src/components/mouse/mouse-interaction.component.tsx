@@ -3,7 +3,7 @@
 import { MouseState } from "@/app/layout";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { FC, useRef } from "react";
+import { FC, useRef, useState } from "react";
 import { useMouseContext } from "./context";
 
 /** Props Interface */
@@ -46,6 +46,8 @@ export const MouseInteraction: FC<MouseInteractionProps> = ({
     mouseContext.setMouseState(null);
   }
 
+  const [randomSkew] = useState(Math.random() > 0.5 ? "skewX" : "skewY");
+
   /** Render */
   return (
     <motion.div
@@ -58,6 +60,7 @@ export const MouseInteraction: FC<MouseInteractionProps> = ({
         opacity: 1,
         scale: 1,
         skewX: 0,
+        skewY: 0,
         transition: {
           duration: 0.15,
           ease: "linear",
@@ -68,7 +71,7 @@ export const MouseInteraction: FC<MouseInteractionProps> = ({
       whileHover={{
         opacity: [0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1],
         scale: [1, 1.1, 1, 1.1, 1, 1, 1.1, 1.1, 1, 1.1, 1, 1],
-        skewX: [0, 5, 0, 5, 0, 0, 5, 5, 0, 5, 0, 5],
+        [randomSkew]: [0, 5, 0, 5, 0, 0, 5, 5, 0, 5, 0, 5],
         transition: {
           duration: 0.35,
           ease: "linear",
