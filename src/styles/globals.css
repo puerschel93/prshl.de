@@ -7,4 +7,17 @@
   body {
     @apply bg-black text-white;
   }
+
+  * {
+    @apply cursor-none;
+    @apply selection:bg-zinc-900 selection:text-zinc-400;
+  }
+
+  p {
+    @apply inline text-zinc-400;
+  }
+
+  *:has(.inline) {
+    @apply text-justify;
+  }
 }

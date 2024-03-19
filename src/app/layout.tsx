@@ -1,7 +1,12 @@
+import {
+  Mouse,
+  MouseStateRenderer,
+  MouseStateRendererWrapper,
+} from "@/components/mouse";
+import { MouseProvider } from "@/components/mouse/context";
 import "@/styles/globals.css";
-import localFont from "next/font/local";
-
 import { TRPCReactProvider } from "@/trpc/react";
+import localFont from "next/font/local";
 
 const grtsk = localFont({
   src: [
@@ -17,21 +22,44 @@ const grtsk = localFont({
   variable: "--font-grtsk",
 });
 
+const monaspace = localFont({
+  src: [
+    {
+      path: "./fonts/mona-wide.otf",
+      weight: "500",
+    },
+  ],
+  variable: "--font-monospace",
+});
+
 export const metadata = {
   title: "PRSHL",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
+
+export interface MouseState {
+  state: "hover" | "click";
+  headerLabelText?: string;
+  renderId: string;
+}
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  /** Render */
   return (
-    <html lang="en">
-      <body className={grtsk.className}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
-    </html>
+    <MouseProvider>
+      <html lang="en">
+        <body className={grtsk.className}>
+          <MouseStateRendererWrapper>
+            <MouseStateRenderer />
+          </MouseStateRendererWrapper>
+          <Mouse />
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </body>
+      </html>
+    </MouseProvider>
   );
 }
