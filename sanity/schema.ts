@@ -1,10 +1,10 @@
-import { type SchemaTypeDefinition } from "sanity";
-import { runSchema } from "./schemas/run";
+import { type SchemaTypeDefinition } from 'sanity';
+import { runSchema as run } from './schemas/run';
 
-const schemaTypes = [runSchema];
+const schemaTypes = [run];
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: schemaTypes,
+	types: schemaTypes,
 };
 
 export default schemaTypes;

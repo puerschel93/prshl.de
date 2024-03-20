@@ -1,65 +1,65 @@
 import {
-  Mouse,
-  MouseStateRenderer,
-  MouseStateRendererWrapper,
-} from "@/components/mouse";
-import { MouseProvider } from "@/components/mouse/context";
-import "@/styles/globals.css";
-import { TRPCReactProvider } from "@/trpc/react";
-import localFont from "next/font/local";
+	Mouse,
+	MouseStateRenderer,
+	MouseStateRendererWrapper,
+} from '@/components/mouse';
+import { MouseProvider } from '@/components/mouse/context';
+import '@/styles/globals.css';
+import { TRPCReactProvider } from '@/trpc/react';
+import localFont from 'next/font/local';
 
 const grtsk = localFont({
-  src: [
-    {
-      path: "./fonts/grtsk-light.ttf",
-      weight: "500",
-    },
-    {
-      path: "./fonts/grtsk-tera.ttf",
-      weight: "700",
-    },
-  ],
-  variable: "--font-grtsk",
+	src: [
+		{
+			path: './fonts/grtsk-light.ttf',
+			weight: '500',
+		},
+		{
+			path: './fonts/grtsk-tera.ttf',
+			weight: '700',
+		},
+	],
+	variable: '--font-grtsk',
 });
 
 const monaspace = localFont({
-  src: [
-    {
-      path: "./fonts/mona-wide.otf",
-      weight: "500",
-    },
-  ],
-  variable: "--font-monospace",
+	src: [
+		{
+			path: './fonts/mona-wide.otf',
+			weight: '500',
+		},
+	],
+	variable: '--font-monospace',
 });
 
 export const metadata = {
-  title: "PRSHL",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+	title: 'PRSHL',
+	icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
 export interface MouseState {
-  state: "hover" | "click";
-  headerLabelText?: string;
-  renderId: string;
+	state: 'hover' | 'click';
+	headerLabelText?: string;
+	renderId: string;
 }
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  /** Render */
-  return (
-    <MouseProvider>
-      <html lang="en">
-        <body className={grtsk.className}>
-          <MouseStateRendererWrapper>
-            <MouseStateRenderer />
-          </MouseStateRendererWrapper>
-          <Mouse />
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </body>
-      </html>
-    </MouseProvider>
-  );
+	/** Render */
+	return (
+		<MouseProvider>
+			<html lang="en">
+				<body className={grtsk.className}>
+					<MouseStateRendererWrapper>
+						<MouseStateRenderer />
+					</MouseStateRendererWrapper>
+					<Mouse />
+					<TRPCReactProvider>{children}</TRPCReactProvider>
+				</body>
+			</html>
+		</MouseProvider>
+	);
 }
