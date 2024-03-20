@@ -1,8 +1,15 @@
+import { SanityValues } from "@/types/sanity";
 import Image from "next/image";
 import { FC } from "react";
 import { MouseInteraction } from "../mouse";
 
-export const Run: FC = () => {
+/** Props Interface */
+interface Props {
+  run: SanityValues["run"];
+}
+
+export const Run: FC<Props> = ({ run }) => {
+  /** Render */
   return (
     <div className="width-full flex flex-row items-start gap-4 border-b-2 border-dotted border-zinc-700 pb-4 last:border-b-0">
       <MouseInteraction>

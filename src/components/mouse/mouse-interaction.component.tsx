@@ -71,7 +71,7 @@ export const MouseInteraction: FC<MouseInteractionProps> = ({
       whileHover={{
         opacity: [0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1],
         scale: [1, 1.1, 1, 1.1, 1, 1, 1.1, 1.1, 1, 1.1, 1, 1],
-        [randomSkew]: [0, 5, 0, 5, 0, 0, 5, 5, 0, 5, 0, 5],
+        [randomSkew]: [0, 5, 0, 5, 0, 0, 5, 5, -2, 5, 2, 0],
         transition: {
           duration: 0.35,
           ease: "linear",

@@ -21,3 +21,7 @@
     @apply text-justify;
   }
 }
+
+[data-ui="NextStudioLayout"] * {
+  cursor: auto !important;
+}
