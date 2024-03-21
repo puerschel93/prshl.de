@@ -18,6 +18,7 @@ export const Run: FC<Props> = async ({ run }) => {
 	return (
 		<div className="flex flex-row items-start gap-4 border-zinc-700 pb-4 border-b-2 last:border-b-0 border-dotted width-full">
 			<MouseInteraction
+				className="md:flex hidden"
 				hoverState={{
 					state: 'hover',
 					imageUrl: sanityImage,
@@ -33,15 +34,16 @@ export const Run: FC<Props> = async ({ run }) => {
 				</div>
 			</MouseInteraction>
 			<div className="flex flex-col gap-2">
-				<div className="flex flex-row justify-between items-center">
+				<div className="flex md:flex-row flex-col justify-between items-start md:items-center gap-2 md:gap-0">
 					<p className="font-bold leading-none">{run.name}</p>
 					<p className="font-mono text-sm">
 						{run.time} / {run.distance?.toFixed(2)} km
 					</p>
 				</div>
-				<hr className="border-zinc-700 mt-1 border-dashed" />
 				<div className="flex flex-col gap-2 mt-1">
-					<p className="font-mono text-primary-500">{run.location}</p>
+					<p className="font-mono text-primary-500 text-xs uppercase">
+						{run.location}
+					</p>
 					<p className="inline line-clamp-3">{run.description}</p>
 				</div>
 			</div>
