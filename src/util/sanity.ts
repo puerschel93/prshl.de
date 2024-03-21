@@ -5,7 +5,7 @@ import { createClient } from 'next-sanity';
 import type { Run } from 'types/sanity';
 
 const client = createClient({
-	projectId: '7sjklu1k',
+	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
 	dataset: 'production',
 	useCdn: true,
 	apiVersion: moment().format('YYYY-MM-DD'),

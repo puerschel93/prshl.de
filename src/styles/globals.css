@@ -9,7 +9,7 @@
 	}
 
 	* {
-		@apply cursor-none;
+		@apply md:cursor-none;
 		@apply selection:bg-zinc-900 selection:text-zinc-400;
 	}
 

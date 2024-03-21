@@ -1,3 +1,4 @@
+import { Copyright } from '@/components/copyright';
 import { Divider } from '@/components/divider';
 import { ContentLayout } from '@/components/layouts';
 import { MouseInteraction } from '@/components/mouse';
@@ -24,6 +25,7 @@ export default async function Home() {
 				</div>
 				<Divider />
 				<RecentRuns />
+				<Copyright />
 			</ContentLayout>
 		</main>
 	);

@@ -1,7 +1,6 @@
 'use client';
 
 import { useMouse } from '@/hooks/use-mouse';
-import { isTouchDevice } from '@/util/misc';
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 import { useMouseContext } from './context';
@@ -22,8 +21,6 @@ export const Mouse: FC = () => {
 		window.addEventListener('mousedown', handleOnMouseDown);
 		window.addEventListener('mouseup', handleOnMouseUp);
 	}, []);
-
-	if (isTouchDevice()) return null;
 
 	/** Render */
 	return (
