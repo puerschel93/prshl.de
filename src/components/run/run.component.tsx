@@ -33,7 +33,7 @@ export const Run: FC<Props> = ({ run }) => {
 					imageUrl: sanityImage,
 				}}
 			>
-				<div className="bg-white rounded-xl w-24 overflow-hidden aspect-square">
+				<div className="bg-white rounded-xl w-24 overflow-hidden aspect-square grayscale">
 					<Image
 						src={sanityImage}
 						alt="random"
@@ -54,10 +54,12 @@ export const Run: FC<Props> = ({ run }) => {
 					<div className="flex flex-row justify-between items-center font-mono">
 						<p className="text-primary-500 text-sm uppercase">{run.location}</p>
 						<p className="text-sm uppercase">
-							{isUpcoming ? 'Upcoming' : run.time} / {run.distance} km
+							{isUpcoming ? 'Upcoming' : run.time} / {run.distance?.toFixed(1)}{' '}
+							km
 						</p>
 					</div>
-					<div className="pt-4">
+					<div className="pt-2">
+						<hr className="mb-3" />
 						<p className="inline line-clamp-3">{run.description}</p>
 					</div>
 				</div>
