@@ -37,12 +37,6 @@ export const runSchema = defineType({
 			placeholder: '00:00:00',
 		}),
 		defineField({
-			name: 'elevation',
-			type: 'string',
-			title: 'Elevation',
-			placeholder: '0.00 m',
-		}),
-		defineField({
 			name: 'description',
 			type: 'text',
 			title: 'Description',

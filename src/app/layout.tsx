@@ -39,8 +39,8 @@ export const metadata = {
 
 export interface MouseState {
 	state: 'hover' | 'click';
-	headerLabelText?: string;
 	renderId: string;
+	imageUrl: string;
 }
 
 export default function RootLayout({

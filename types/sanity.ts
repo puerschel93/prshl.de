@@ -87,13 +87,6 @@ export interface Run extends SanityDocument {
   time?: string;
 
   /**
-   * Elevation — `string`
-   *
-   *
-   */
-  elevation?: string;
-
-  /**
    * Description — `text`
    *
    *
