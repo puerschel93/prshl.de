@@ -44,9 +44,11 @@ export const Run: FC<Props> = ({ run }) => {
 				</div>
 			</MouseInteraction>
 			<div className="flex flex-col gap-2">
-				<div className="flex md:flex-row flex-col-reverse justify-between items-start md:items-center gap-2 md:gap-0">
+				<div className="flex md:flex-row flex-col-reverse justify-between items-center items-start md:items-center gap-2 md:gap-0">
 					<p className="font-bold leading-none">{run.name}</p>
-					<p>{dayjs(run.date).format('dddd, Do MMMM YYYY')}</p>
+					<p className="text-sm">
+						{dayjs(run.date).format('dddd, Do MMMM YYYY')}
+					</p>
 				</div>
 				<div className="flex flex-col gap-2 mt-1">
 					<div className="flex flex-row justify-between items-center font-mono">
