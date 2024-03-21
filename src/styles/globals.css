@@ -6,6 +6,7 @@
 @layer base {
 	body {
 		@apply bg-black text-white bg-dotted-zinc-900 bg-dotted-spacing-5;
+		@apply overflow-x-hidden;
 	}
 
 	* {
