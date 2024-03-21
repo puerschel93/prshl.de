@@ -1,15 +1,19 @@
-"use client";
+'use client';
 
-import { AnimatePresence } from "framer-motion";
-import { FC } from "react";
+import { AnimatePresence } from 'framer-motion';
+import type { FC } from 'react';
 
 /** Props Interface */
 interface MouseStateRendererWrapperProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export const MouseStateRendererWrapper: FC<MouseStateRendererWrapperProps> = ({
-  children,
+	children,
 }) => {
-  return <AnimatePresence mode="wait">{children}</AnimatePresence>;
+	return (
+		<AnimatePresence mode="wait">
+			<div className="fixed inset-0 pointer-events-none">{children}</div>
+		</AnimatePresence>
+	);
 };

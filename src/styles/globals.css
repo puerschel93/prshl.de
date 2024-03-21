@@ -1,27 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@fontsource-variable/space-grotesk";
+@import '@fontsource-variable/space-grotesk';
 
 @layer base {
-  body {
-    @apply bg-black text-white;
-  }
+	body {
+		@apply bg-black text-white bg-dotted-zinc-900 bg-dotted-spacing-5;
+	}
 
-  * {
-    @apply cursor-none;
-    @apply selection:bg-zinc-900 selection:text-zinc-400;
-  }
+	* {
+		@apply cursor-none;
+		@apply selection:bg-zinc-900 selection:text-zinc-400;
+	}
 
-  p {
-    @apply inline text-zinc-400;
-  }
+	p {
+		@apply inline text-zinc-400;
+	}
 
-  *:has(.inline) {
-    @apply text-justify;
-  }
+	*:has(.inline) {
+		@apply text-justify;
+	}
 }
 
-[data-ui="NextStudioLayout"] * {
-  cursor: auto !important;
+[data-ui='NextStudioLayout'] * {
+	cursor: auto !important;
 }

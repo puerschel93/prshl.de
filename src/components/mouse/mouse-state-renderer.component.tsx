@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { useMouseContext } from './context';
 
 const MIN_OPACITY = 0;

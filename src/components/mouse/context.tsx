@@ -1,40 +1,38 @@
-"use client";
+'use client';
 
-import { MouseState } from "@/app/layout";
-import { FC, createContext, useContext, useState } from "react";
+import type { MouseState } from '@/app/layout';
+import type { FC } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 /** Interface */
 interface IMouseContext {
-  setMouseState: (state: MouseState | null) => void;
-  mouseState: MouseState | null;
+	setMouseState: (state: MouseState | null) => void;
+	mouseState: MouseState | null;
 }
 
 /** Context */
-export const MouseContext = createContext<IMouseContext>({
-  setMouseState: () => {},
-  mouseState: null,
-});
+export const MouseContext = createContext<IMouseContext>({} as IMouseContext);
 
 /** Hooks */
 export const useMouseContext = () => {
-  return useContext(MouseContext);
+	return useContext(MouseContext);
 };
 
 export const MouseProvider: FC<{ children: React.ReactNode }> = ({
-  children,
+	children,
 }) => {
-  /** State */
-  const [mouseState, setMouseState] = useState<MouseState | null>(null);
+	/** State */
+	const [mouseState, setMouseState] = useState<MouseState | null>(null);
 
-  /** Render */
-  return (
-    <MouseContext.Provider
-      value={{
-        mouseState,
-        setMouseState,
-      }}
-    >
-      {children}
-    </MouseContext.Provider>
-  );
+	/** Render */
+	return (
+		<MouseContext.Provider
+			value={{
+				mouseState,
+				setMouseState,
+			}}
+		>
+			{children}
+		</MouseContext.Provider>
+	);
 };

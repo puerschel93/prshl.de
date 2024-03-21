@@ -1,9 +1,10 @@
 'use client';
 
-import { MouseState } from '@/app/layout';
+import type { MouseState } from '@/app/layout';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { FC, useRef, useState } from 'react';
+import type { FC } from 'react';
+import { useRef, useState } from 'react';
 import { useMouseContext } from './context';
 
 /** Props Interface */
@@ -32,9 +33,8 @@ export const MouseInteraction: FC<MouseInteractionProps> = ({
 
 	/** Functions */
 	function handleOnMouseEnter() {
-		const renderId = crypto
-			.getRandomValues(new Uint32Array(1))[0]
-			?.toString() as string;
+		const renderId = crypto.getRandomValues(new Uint32Array(1))[0]?.toString();
+		if (!renderId) return;
 		const newState = (hoverState ?? defaultMouseState) as typeof hoverState & {
 			renderId: string;
 		};

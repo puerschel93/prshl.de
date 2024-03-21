@@ -22,7 +22,7 @@ const grtsk = localFont({
 	variable: '--font-grtsk',
 });
 
-const monaspace = localFont({
+const _monaspace = localFont({
 	src: [
 		{
 			path: './fonts/mona-wide.otf',
