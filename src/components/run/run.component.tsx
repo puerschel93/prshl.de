@@ -13,8 +13,7 @@ interface Props {
 	run: SanityRun;
 }
 
-export const Run: FC<Props> = async ({ run }) => {
-	/** Hooks */
+export const Run: FC<Props> = ({ run }) => {
 	const sanityImage = useSanityImage(run.image?.asset._ref);
 
 	/** Computed */
