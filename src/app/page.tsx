@@ -1,7 +1,13 @@
 import { Copyright } from '@/components/copyright';
 import { Divider } from '@/components/divider';
 import { ContentLayout } from '@/components/layouts';
-import { MouseInteraction } from '@/components/mouse';
+import {
+	Mouse,
+	MouseInteraction,
+	MouseStateRenderer,
+	MouseStateRendererWrapper,
+} from '@/components/mouse';
+import { Socials } from '@/components/socials';
 import { Caption } from './_components/caption.component';
 import { RecentRuns } from './_components/recent-runs.component';
 
@@ -10,6 +16,11 @@ export const revalidate = 3600;
 export default async function Home() {
 	return (
 		<main className="flex justify-center w-screen h-screen">
+			<Socials />
+			<MouseStateRendererWrapper>
+				<MouseStateRenderer />
+			</MouseStateRendererWrapper>
+			<Mouse />
 			<ContentLayout>
 				<h1 className="font-bold text-[4rem]">PRSHL</h1>
 				<Caption />

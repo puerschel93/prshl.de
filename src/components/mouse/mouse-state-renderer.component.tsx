@@ -31,6 +31,8 @@ export const MouseStateRenderer: FC = () => {
 	/** Context */
 	const { mouseState } = useMouseContext();
 
+	if (!mouseState?.imageUrl) return null;
+
 	/** Render */
 	return (
 		<AnimatePresence mode="popLayout">

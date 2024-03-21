@@ -106,4 +106,27 @@ export interface Run extends SanityDocument {
   };
 }
 
-export type Documents = Run;
+/**
+ * Socials
+ *
+ *
+ */
+export interface Social extends SanityDocument {
+  _type: "social";
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: "x" | "instagram" | "github";
+
+  /**
+   * URL — `string`
+   *
+   *
+   */
+  url?: string;
+}
+
+export type Documents = Run | Social;

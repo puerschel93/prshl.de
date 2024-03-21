@@ -2,7 +2,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import moment from 'moment';
 import { createClient } from 'next-sanity';
-import type { Run } from 'types/sanity';
+import type { Run, Social } from 'types/sanity';
 
 const client = createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -21,4 +21,8 @@ export async function getRecentRuns(): Promise<Run[]> {
 	return await client.fetch(
 		`*[_type == "run"] | order(date desc) {name, link, date, location, distance, time, elevation, description, image}`,
 	);
+}
+
+export async function getSocials(): Promise<Social[]> {
+	return await client.fetch(`*[_type == "social"]`);
 }

@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 
-export const runSchema = defineType({
+export const run = defineType({
 	name: 'run',
 	type: 'document',
 	title: 'Runs',

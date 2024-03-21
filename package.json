@@ -11,7 +11,6 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/space-grotesk": "^5.0.17",
-		"@sanity-typed/types": "^6.3.3",
 		"@sanity/image-url": "^1.0.2",
 		"@sanity/vision": "^3.34.0",
 		"@t3-oss/env-nextjs": "^0.9.2",

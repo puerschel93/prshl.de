@@ -1,7 +1,8 @@
 import { type SchemaTypeDefinition } from 'sanity';
-import { runSchema as run } from './schemas/run';
+import { run } from './schemas/run';
+import { social } from './schemas/social';
 
-const schemaTypes = [run];
+const schemaTypes = [run, social];
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: schemaTypes,

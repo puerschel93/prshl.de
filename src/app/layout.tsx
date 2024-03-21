@@ -1,11 +1,5 @@
-import {
-	Mouse,
-	MouseStateRenderer,
-	MouseStateRendererWrapper,
-} from '@/components/mouse';
 import { MouseProvider } from '@/components/mouse/context';
 import '@/styles/globals.css';
-import { TRPCReactProvider } from '@/trpc/react';
 import localFont from 'next/font/local';
 
 const grtsk = localFont({
@@ -40,7 +34,7 @@ export const metadata = {
 export interface MouseState {
 	state: 'hover' | 'click';
 	renderId: string;
-	imageUrl: string;
+	imageUrl?: string;
 }
 
 export default function RootLayout({
@@ -52,13 +46,7 @@ export default function RootLayout({
 	return (
 		<MouseProvider>
 			<html lang="en">
-				<body className={grtsk.className}>
-					<MouseStateRendererWrapper>
-						<MouseStateRenderer />
-					</MouseStateRendererWrapper>
-					<Mouse />
-					<TRPCReactProvider>{children}</TRPCReactProvider>
-				</body>
+				<body className={grtsk.className}>{children}</body>
 			</html>
 		</MouseProvider>
 	);

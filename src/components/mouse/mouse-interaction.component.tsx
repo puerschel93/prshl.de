@@ -17,7 +17,6 @@ interface MouseInteractionProps {
 
 const defaultMouseState: Omit<MouseState, 'renderId'> = {
 	state: 'hover',
-	imageUrl: 'https://source.unsplash.com/random/1800x1000',
 };
 
 export const MouseInteraction: FC<MouseInteractionProps> = ({
