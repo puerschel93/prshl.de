@@ -8,7 +8,7 @@ export const Caption: FC = () => {
 	return (
 		<Fragment>
 			<div
-				className="inline"
+				className="inline text-left md:text-justify"
 				style={{
 					mixBlendMode: 'difference',
 				}}
