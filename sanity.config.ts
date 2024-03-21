@@ -1,4 +1,3 @@
-import { InferSchemaValues } from '@sanity-typed/types';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
@@ -14,6 +13,3 @@ const config = defineConfig({
 });
 
 export default config;
-
-export type SanityValues = InferSchemaValues<typeof config>;
-export type SanitySchema = typeof schema;

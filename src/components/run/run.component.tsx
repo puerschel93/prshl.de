@@ -2,6 +2,7 @@
 
 import { useSanityImage } from '@/hooks/use-sanity-image';
 import { dayjs } from '@/util/date';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { FC } from 'react';
@@ -22,7 +23,11 @@ export const Run: FC<Props> = ({ run }) => {
 	/** Render */
 	return (
 		<motion.div
-			className="flex flex-row items-start gap-4 border-zinc-700 pb-4 border-b last:border-b-0 border-dashed width-full"
+			className={clsx(
+				'flex flex-row items-start gap-4 border-zinc-700 pb-4 border-b last:border-b-0 border-dashed width-full',
+				isUpcoming ? 'grayscale' : '',
+				'hover:grayscale-0',
+			)}
 			animate={{ opacity: isUpcoming ? 0.5 : 1 }}
 			whileHover={{ opacity: 1 }}
 		>
@@ -33,7 +38,7 @@ export const Run: FC<Props> = ({ run }) => {
 					imageUrl: sanityImage,
 				}}
 			>
-				<div className="bg-white rounded-xl w-24 overflow-hidden aspect-square grayscale">
+				<div className="bg-white w-24 overflow-hidden aspect-square grayscale hover:grayscale-0">
 					<Image
 						src={sanityImage}
 						alt="random"

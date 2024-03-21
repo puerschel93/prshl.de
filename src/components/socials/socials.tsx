@@ -1,6 +1,6 @@
 import { getSocials } from '@/util/sanity';
 import Link from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import type { IconType } from 'react-icons/lib';
 import {
 	TbBrandGithub,
@@ -8,7 +8,7 @@ import {
 	TbBrandX,
 	TbRectangle,
 } from 'react-icons/tb';
-import { Social } from 'types/sanity';
+import type { Social } from 'types/sanity';
 import { MouseInteraction } from '../mouse';
 
 export const Socials: FC = async () => {
