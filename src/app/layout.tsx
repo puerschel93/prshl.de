@@ -1,4 +1,3 @@
-import { MouseProvider } from '@/components/mouse/context';
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
 
@@ -31,12 +30,6 @@ export const metadata = {
 	icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
-export interface MouseState {
-	state: 'hover' | 'click';
-	renderId: string;
-	imageUrl?: string;
-}
-
 export default function RootLayout({
 	children,
 }: {
@@ -44,10 +37,8 @@ export default function RootLayout({
 }) {
 	/** Render */
 	return (
-		<MouseProvider>
-			<html lang="en">
-				<body className={grtsk.className}>{children}</body>
-			</html>
-		</MouseProvider>
+		<html lang="en">
+			<body className={grtsk.className}>{children}</body>
+		</html>
 	);
 }

@@ -5,12 +5,11 @@
 
 @layer base {
 	body {
-		@apply bg-black text-white bg-dotted-zinc-900 bg-dotted-spacing-5;
+		@apply bg-neutral-950 text-white;
 		@apply overflow-x-hidden;
 	}
 
 	* {
-		@apply md:cursor-none;
 		@apply selection:bg-zinc-900 selection:text-zinc-400;
 	}
 

@@ -8,7 +8,6 @@ import {
 	TbRectangle,
 } from 'react-icons/tb';
 import type { Social } from 'types/sanity';
-import { MouseInteraction } from '../mouse';
 
 export const Socials: FC = async () => {
 	/** Functions */
@@ -22,14 +21,7 @@ export const Socials: FC = async () => {
 				if (!social.url) return null;
 				return (
 					<Link href={social.url} key={social._id} target="_blank">
-						<MouseInteraction
-							key={social._id}
-							hoverState={{
-								state: 'hover',
-							}}
-						>
-							<Icon size={22} className="hover:stroke-primary-500" />
-						</MouseInteraction>
+						<Icon size={22} className="hover:stroke-primary-500" />
 					</Link>
 				);
 			})}

@@ -8,7 +8,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: colors.emerald,
+				primary: colors.teal,
 			},
 			fontFamily: {
 				grtsk: ['var(--font-grtsk)', ...fontFamily.sans],
