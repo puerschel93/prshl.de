@@ -5,20 +5,38 @@
 
 @layer base {
 	body {
-		@apply bg-neutral-950 text-white;
+		@apply bg-primaryGray-950 text-white;
 		@apply overflow-x-hidden;
 	}
 
 	* {
-		@apply selection:bg-zinc-900 selection:text-zinc-400;
+		@apply scrollbar-none;
+		@apply selection:bg-primaryGray-900 selection:text-primaryGray-400;
 	}
 
 	p {
-		@apply inline text-zinc-400;
+		@apply inline text-primaryGray-400;
+	}
+
+	a {
+		@apply text-white pb-1;
+	}
+
+	a:not(:has(svg)):hover {
+		@apply border-b border-dotted;
+	}
+
+	del {
+		@apply no-underline text-white cursor-default;
 	}
 
 	*:has(.inline) {
 		@apply text-justify;
+	}
+
+	hr {
+		@apply border-0 border-b-[0.5px] border-dashed border-primaryGray-800;
+		@apply my-4;
 	}
 }
 

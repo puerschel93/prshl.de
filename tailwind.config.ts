@@ -2,13 +2,15 @@ import { type Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 export default {
 	content: ['./src/**/*.tsx'],
 	theme: {
 		extend: {
 			colors: {
-				primary: colors.teal,
+				primary: colors.emerald,
+				primaryGray: colors.neutral,
 			},
 			fontFamily: {
 				grtsk: ['var(--font-grtsk)', ...fontFamily.sans],
@@ -16,5 +18,11 @@ export default {
 			},
 		},
 	},
-	plugins: [require('tailwindcss-dotted-background')],
+	plugins: [
+		plugin(function ({ addVariant }: { addVariant: Function }) {
+			addVariant('not-last', '&:not(:last-child)');
+		}),
+		require('tailwindcss-dotted-background'),
+		require('tailwind-scrollbar'),
+	],
 } satisfies Config;

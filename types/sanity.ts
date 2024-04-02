@@ -129,4 +129,27 @@ export interface Social extends SanityDocument {
   url?: string;
 }
 
-export type Documents = Run | Social;
+/**
+ * Content
+ *
+ *
+ */
+export interface Content extends SanityDocument {
+  _type: "content";
+
+  /**
+   * Type — `string`
+   *
+   *
+   */
+  type?: "caption";
+
+  /**
+   * Content Description — `array`
+   *
+   *
+   */
+  contentDescription?: Array<SanityKeyed<SanityBlock>>;
+}
+
+export type Documents = Run | Social | Content;

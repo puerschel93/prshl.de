@@ -2,7 +2,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import moment from 'moment';
 import { createClient } from 'next-sanity';
-import type { Run, Social } from 'types/sanity';
+import type { Content, Run, Social } from 'types/sanity';
 
 const client = createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -25,4 +25,13 @@ export async function getRecentRuns(): Promise<Run[]> {
 
 export async function getSocials(): Promise<Social[]> {
 	return await client.fetch(`*[_type == "social"]`);
+}
+
+export async function getContent(
+	type: Content['type'],
+): Promise<Content | undefined> {
+	const contents = (await client.fetch(
+		`*[_type == "content" && type == "${type}"]`,
+	)) as Content[];
+	return contents[0];
 }
