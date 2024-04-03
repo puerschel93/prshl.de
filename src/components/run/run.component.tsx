@@ -1,6 +1,7 @@
 'use client';
 
 import { dayjs } from '@/util/date';
+import clsx from 'clsx';
 import type { FC } from 'react';
 import type { Run as SanityRun } from 'types/sanity';
 
@@ -18,13 +19,13 @@ export const Run: FC<Props> = ({ run }) => {
 	/** Render */
 	return (
 		<div
-			className="flex flex-col gap-2 border-primaryGray-800 hover:opacity-80 py-4 pl-3 not-last:border-b-[0.5px] cursor-default"
-			style={{
-				opacity: isUpcoming ? 0.25 : 1,
-				cursor: isUpcoming ? 'wait' : 'default',
-			}}
+			className={clsx(
+				'flex flex-col gap-2 border-primaryGray-800 py-16 not-last:border-b-[0.5px]',
+				isUpcoming ? 'opacity-15' : 'opacity-100',
+				'hover:opacity-100 transition-opacity',
+			)}
 		>
-			<div className="flex flex-row justify-between -ml-3">
+			<div className="flex flex-row justify-between">
 				<h2 className="font-bold uppercase">{run.name}</h2>
 				<p className="text-primary-500">{run.distance?.toFixed(1)} km</p>
 			</div>
@@ -33,7 +34,7 @@ export const Run: FC<Props> = ({ run }) => {
 				<p>{run.time}</p>
 			</div>
 			<p className="text-primary-500 text-sm">
-				{dayjs(run.date).format('YYYY-MM-DD ddd')}
+				{dayjs(run.date).format('YYYY-MM-DD')}
 			</p>
 			<p className="line-clamp-4">{run.description}</p>
 		</div>

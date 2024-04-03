@@ -3,7 +3,9 @@ import { Socials } from '@/components/socials';
 import { portableTextComponents } from '@/util/portable-text';
 import { getContent } from '@/util/sanity';
 import { MAIN_CONTENT_WIDTH } from '@/util/sizes';
+import { generateRandomBuildNumber } from '@/util/strings';
 import { PortableText } from '@portabletext/react';
+import dayjs from 'dayjs';
 import { ChinaScam } from './_components/china-scam.component';
 import { Content } from './_components/content.component';
 import { Decoration } from './_components/decoration.component';
@@ -14,6 +16,7 @@ export const revalidate = 1;
 export default async function Home() {
 	/** Fetch */
 	const caption = await getContent('caption');
+	const buildNumber = generateRandomBuildNumber();
 
 	/** Fallback */
 	if (!caption?.contentDescription) return <div />;
@@ -27,6 +30,12 @@ export default async function Home() {
 				className="flex flex-col gap-4 max-w-[90vw]"
 				style={{ width: MAIN_CONTENT_WIDTH }}
 			>
+				<div className="flex flex-col items-end gap-2 mb-36 self-end">
+					<p className="text-primaryGray-600 text-sm">
+						{dayjs().format('[Berlin], YYYY-MM-DD / hh:mm A')}
+					</p>
+					<p className="text-primaryGray-600 text-sm">{`Build # ${buildNumber}`}</p>
+				</div>
 				<h1 className="inline-flex flex-row justify-between mb-8 font-bold text-[3rem]">
 					PRSHL
 					<ChinaScam />

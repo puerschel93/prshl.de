@@ -18,7 +18,7 @@ export const TabList: FC<TabListProps> = ({
 	/** Render */
 	return (
 		<div className="flex flex-row gap-4">
-			{tabTitles.map((title, index) => {
+			{tabTitles.map((title) => {
 				const isCurrentTab = title === currentTab;
 				return (
 					<p

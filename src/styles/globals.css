@@ -11,7 +11,7 @@
 
 	* {
 		@apply scrollbar-none;
-		@apply selection:bg-primaryGray-900 selection:text-primaryGray-400;
+		@apply selection:bg-primary-950 selection:bg-opacity-50 selection:text-primary-100;
 	}
 
 	p {

@@ -11,7 +11,7 @@ interface Props {
 export const MainWrapper: FC<Props> = ({ children }) => {
 	return (
 		<motion.main
-			className="flex justify-center pt-[10vh] sm:pt-[45vh] w-screen"
+			className="flex justify-center pt-[10vh] sm:pt-[25vh] w-screen"
 			style={{ minHeight: '100vh' }}
 		>
 			{children}
