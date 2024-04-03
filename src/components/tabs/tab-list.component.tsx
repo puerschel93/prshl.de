@@ -25,7 +25,7 @@ export const TabList: FC<TabListProps> = ({
 						key={title}
 						onClick={() => setCurrentTab(title)}
 						className={clsx(
-							'hover:text-white cursor-pointer',
+							'hover:text-white cursor-pointer text-sm',
 							isCurrentTab ? 'text-white' : '',
 						)}
 					>
