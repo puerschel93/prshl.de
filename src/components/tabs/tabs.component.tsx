@@ -5,6 +5,10 @@ import { FC, ReactNode, useState } from 'react';
 import { TabList } from './tab-list.component';
 
 /** Props Interface */
+export interface TabProps {
+	layoutId: string;
+}
+
 export interface TabsProps {
 	tabs: {
 		title: string;
@@ -18,25 +22,23 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
 
 	/** Render */
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="flex flex-col flex-grow gap-4">
 			<TabList
 				tabTitles={tabs.map((tab) => tab.title)}
 				currentTab={currentTab}
 				setCurrentTab={setCurrentTab}
 			/>
-			<motion.div className="overflow-x-hidden" animate={{ height: 'auto' }}>
-				<AnimatePresence mode="wait">
-					<motion.div
-						key={currentTab}
-						className="pb-[10vh]"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-					>
-						{tabs.find((tab) => tab.title === currentTab)?.content}
-					</motion.div>
-				</AnimatePresence>
-			</motion.div>
+			<AnimatePresence mode="wait">
+				<motion.div
+					key={currentTab}
+					className="pb-[10vh]"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+				>
+					{tabs.find((tab) => tab.title === currentTab)?.content}
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 };
