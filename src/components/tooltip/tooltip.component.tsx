@@ -2,7 +2,7 @@
 
 import * as RadixTooltip from '@radix-ui/react-tooltip';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FC, useId } from 'react';
+import { type FC, useId } from 'react';
 
 /** Props Interface */
 interface TooltipProps {

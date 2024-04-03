@@ -1,6 +1,6 @@
 'use client';
 
-import { useSanityImage } from '@/hooks/use-sanity-image';
+import { dayjs } from '@/util/date';
 import type { FC } from 'react';
 import type { Run as SanityRun } from 'types/sanity';
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Run: FC<Props> = ({ run }) => {
-	const sanityImage = useSanityImage(run.image?.asset._ref);
+	// const sanityImage = useSanityImage(run.image?.asset._ref);
 
 	/** Computed */
 	const isUpcoming = run.time === null;
@@ -32,7 +32,9 @@ export const Run: FC<Props> = ({ run }) => {
 				<p>{run.location}</p>
 				<p>{run.time}</p>
 			</div>
-			<p></p>
+			<p className="text-primary-500 text-sm">
+				{dayjs(run.date).format('YYYY-MM-DD ddd')}
+			</p>
 			<p className="line-clamp-4">{run.description}</p>
 		</div>
 	);

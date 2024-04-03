@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { FC, ReactNode, useState } from 'react';
+import { type FC, type ReactNode, useState } from 'react';
 import { TabList } from './tab-list.component';
 
 /** Props Interface */

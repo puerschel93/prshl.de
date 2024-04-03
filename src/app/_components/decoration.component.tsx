@@ -2,9 +2,9 @@
 
 import { useElementPosition } from '@/hooks/use-element-position';
 import { useWindowSize } from '@/hooks/use-window-size';
+import { MAIN_CONTENT_WIDTH } from '@/util/sizes';
 import { motion } from 'framer-motion';
-import { FC, Fragment, useRef } from 'react';
-import { MAIN_CONTENT_WIDTH } from '../page';
+import { type FC, Fragment, useRef } from 'react';
 
 const DECORATION_OFFSET = 50;
 const DECORATION_OPACITY = 0.5;

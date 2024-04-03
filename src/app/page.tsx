@@ -2,6 +2,7 @@ import { Copyright } from '@/components/copyright';
 import { Socials } from '@/components/socials';
 import { portableTextComponents } from '@/util/portable-text';
 import { getContent } from '@/util/sanity';
+import { MAIN_CONTENT_WIDTH } from '@/util/sizes';
 import { PortableText } from '@portabletext/react';
 import { ChinaScam } from './_components/china-scam.component';
 import { Content } from './_components/content.component';
@@ -9,7 +10,6 @@ import { Decoration } from './_components/decoration.component';
 import { MainWrapper } from './_components/main-wrapper.component';
 
 export const revalidate = 1;
-export const MAIN_CONTENT_WIDTH = 650;
 
 export default async function Home() {
 	/** Fetch */

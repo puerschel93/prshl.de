@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 export const useElementPosition = (
 	elementRef: React.RefObject<HTMLElement>,
-	dependencies: any[] = [],
 ) => {
 	/** State */
 	const [elementPosition, setElementPosition] = useState({
@@ -25,7 +24,7 @@ export const useElementPosition = (
 		handlePosition();
 		window.addEventListener('resize', handlePosition);
 		return () => window.removeEventListener('resize', handlePosition);
-	}, [elementRef, ...dependencies]);
+	}, [elementRef]);
 
 	return elementPosition;
 };

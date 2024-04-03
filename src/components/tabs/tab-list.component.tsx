@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { FC } from 'react';
+import { type FC } from 'react';
 
 /** Props Interface */
 interface TabListProps {

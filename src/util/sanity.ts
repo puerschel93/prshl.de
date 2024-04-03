@@ -30,8 +30,8 @@ export async function getSocials(): Promise<Social[]> {
 export async function getContent(
 	type: Content['type'],
 ): Promise<Content | undefined> {
-	const contents = (await client.fetch(
+	const contents: Content[] = await client.fetch(
 		`*[_type == "content" && type == "${type}"]`,
-	)) as Content[];
+	);
 	return contents[0];
 }
