@@ -8,7 +8,8 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"start": "next start",
-		"types": "npx sanity-codegen"
+		"types": "npx sanity-codegen",
+		"deploy": "vercel --prod"
 	},
 	"dependencies": {
 		"@fontsource-variable/space-grotesk": "^5.0.17",
