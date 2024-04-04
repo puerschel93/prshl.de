@@ -2,43 +2,43 @@ import '@/styles/globals.css';
 import localFont from 'next/font/local';
 
 const grtsk = localFont({
-	src: [
-		{
-			path: './fonts/grtsk-light.ttf',
-			weight: '500',
-		},
-		{
-			path: './fonts/grtsk-tera.ttf',
-			weight: '700',
-		},
-	],
-	variable: '--font-grtsk',
+    src: [
+        {
+            path: './fonts/grtsk-light.ttf',
+            weight: '500',
+        },
+        {
+            path: './fonts/grtsk-tera.ttf',
+            weight: '700',
+        },
+    ],
+    variable: '--font-grtsk',
 });
 
 const _monaspace = localFont({
-	src: [
-		{
-			path: './fonts/mona-wide.otf',
-			weight: '500',
-		},
-	],
-	variable: '--font-monospace',
+    src: [
+        {
+            path: './fonts/mona-wide.otf',
+            weight: '500',
+        },
+    ],
+    variable: '--font-monospace',
 });
 
 export const metadata = {
-	title: 'PRSHL',
-	icons: [{ rel: 'icon', url: '/favicon.ico' }],
+    title: 'PRSHL',
+    icons: [{ rel: 'icon', url: '/favicon.ico' }],
 };
 
 export default function RootLayout({
-	children,
+    children,
 }: {
-	children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-	/** Render */
-	return (
-		<html lang="en">
-			<body className={grtsk.className}>{children}</body>
-		</html>
-	);
+    /** Render */
+    return (
+        <html lang="en">
+            <body className={grtsk.className}>{children}</body>
+        </html>
+    );
 }

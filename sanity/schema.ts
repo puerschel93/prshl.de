@@ -6,7 +6,7 @@ import { social } from './schemas/social';
 const schemaTypes = [run, social, content];
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-	types: schemaTypes,
+    types: schemaTypes,
 };
 
 export default schemaTypes;
