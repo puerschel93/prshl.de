@@ -24,9 +24,9 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
 	/** State */
 	const [containerHeight, setContainerHeight] = useState<number>(0);
 	const [currentTab, setCurrentTab] = useState<string>(
-		(tabs[0] !== 'spacer'
+		tabs[0] !== 'spacer'
 			? tabs[0]?.title ?? ''
-			: tabs.find((tab) => tab !== 'spacer')?.title ?? '') as string,
+			: (tabs.find((tab) => tab !== 'spacer') as Tab | undefined)?.title ?? '',
 	);
 	const renderId = useId();
 
