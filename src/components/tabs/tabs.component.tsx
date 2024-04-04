@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { type FC, type ReactNode, useId, useState } from 'react';
+import { EmptyTab } from './empty-tab.component';
 import { TabList } from './tab-list.component';
 import { TabPanel } from './tab-panel.component';
 
@@ -11,7 +12,7 @@ export interface TabProps {
 }
 
 export interface TabsProps {
-	tabs: Tab[];
+	tabs: (Tab | 'spacer')[];
 }
 
 export interface Tab {
@@ -22,7 +23,11 @@ export interface Tab {
 export const Tabs: FC<TabsProps> = ({ tabs }) => {
 	/** State */
 	const [containerHeight, setContainerHeight] = useState<number>(0);
-	const [currentTab, setCurrentTab] = useState<string>(tabs[0]?.title ?? '');
+	const [currentTab, setCurrentTab] = useState<string>(
+		(tabs[0] !== 'spacer'
+			? tabs[0]?.title ?? ''
+			: tabs.find((tab) => tab !== 'spacer')?.title ?? '') as string,
+	);
 	const renderId = useId();
 
 	/** Render */
@@ -35,15 +40,14 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
 				renderId={renderId}
 			/>
 			<motion.div
-				className="overflow-hidden"
+				className="mb-[10vh] overflow-hidden"
 				initial={{ height: containerHeight }}
 				animate={{ height: containerHeight }}
-				transition={{ duration: 0.75, ease: 'easeInOut' }}
+				transition={{ duration: 1.5, ease: 'circInOut' }}
 			>
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={currentTab}
-						className="pb-[10vh]"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
@@ -53,7 +57,11 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
 							setContainerHeight={setContainerHeight}
 							currentTab={currentTab}
 						>
-							{tabs.find((tab) => tab.title === currentTab)?.content}
+							{(
+								tabs.find(
+									(tab) => tab !== 'spacer' && tab.title === currentTab,
+								) as Tab | undefined
+							)?.content ?? <EmptyTab />}
 						</TabPanel>
 					</motion.div>
 				</AnimatePresence>

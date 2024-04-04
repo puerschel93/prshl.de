@@ -30,7 +30,7 @@ export default async function Home() {
 				className="flex flex-col gap-4 max-w-[90vw]"
 				style={{ width: MAIN_CONTENT_WIDTH }}
 			>
-				<div className="flex flex-col items-end gap-2 mb-36 self-end">
+				<div className="sm:flex flex-col items-end gap-2 hidden mb-36 self-end">
 					<p className="text-primaryGray-600 text-sm">
 						{dayjs().format('[Berlin], YYYY-MM-DD / hh:mm A')}
 					</p>

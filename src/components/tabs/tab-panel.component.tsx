@@ -17,8 +17,8 @@ export const TabPanel: FC<Props> = ({
 	/** Effects */
 	useEffect(() => {
 		const clientHeight = document.getElementById(id)?.clientHeight ?? 0;
-		setContainerHeight(clientHeight);
-	}, [id, setContainerHeight]);
+		setContainerHeight(Math.max(clientHeight, 100));
+	});
 
 	/** Render */
 	return <div id={id}>{children}</div>;

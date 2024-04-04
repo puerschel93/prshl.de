@@ -13,6 +13,9 @@ export const Content: FC = () => {
 					content: <RecentRuns />,
 				},
 				{ title: 'Projects', content: <Projects /> },
+				{ title: 'Blog', content: null },
+				'spacer',
+				{ title: 'About', content: null },
 			]}
 		/>
 	);

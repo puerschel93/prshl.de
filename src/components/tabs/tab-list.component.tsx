@@ -8,7 +8,7 @@ import { type Tab } from './tabs.component';
 
 /** Props Interface */
 interface TabListProps {
-	tabs: Tab[];
+	tabs: (Tab | 'spacer')[];
 	currentTab: string;
 	setCurrentTab: (tab: string) => void;
 	renderId: string;
@@ -23,7 +23,10 @@ export const TabList: FC<TabListProps> = ({
 	/** Render */
 	return (
 		<div className="flex flex-row gap-4">
-			{tabs.map(({ title }) => {
+			{tabs.map((tab) => {
+				if (tab === 'spacer')
+					return <span className="flex-1" key={Math.random()} />;
+				const { title } = tab;
 				const isCurrentTab = currentTab === title;
 				return (
 					<motion.span

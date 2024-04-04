@@ -2,17 +2,11 @@ import type { FC } from 'react';
 
 export const Copyright: FC = () => {
 	return (
-		<div className="flex flex-col pb-8 w-10/12 self-center">
-			<p className="text-center text-primaryGray-600 text-xs leading-relaxed self-center">
-				&copy; {new Date().getFullYear()} Florian Pürschel
-				<br />
-				<br />
-				<span className="mt-2">
-					Text was written by ChatGPT because I am too lazy to write it myself.
-					This comment was written by GitHub Copilot because I was even too lazy
-					to write that myself.
-				</span>
-			</p>
+		<div className="flex flex-col items-center gap-2 pb-8 w-10/12 text-center text-primaryGray-600 text-xs leading-relaxed self-center">
+			<p>&copy; {new Date().getFullYear()} Florian Pürschel</p>
+			<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+				CC BY-NC 4.0
+			</a>
 		</div>
 	);
 };
