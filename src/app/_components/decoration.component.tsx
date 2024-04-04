@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { type FC, Fragment, useRef } from 'react';
 
 const DECORATION_OFFSET = 50;
-const DECORATION_OPACITY = 0.5;
+const DECORATION_OPACITY = 1;
 
 export const Decoration: FC = () => {
 	/** Hooks */
