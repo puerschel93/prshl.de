@@ -20,7 +20,7 @@ export const TabList: FC<TabListProps> = ({
 	/** Render */
 	return (
 		<div className="flex flex-row gap-4">
-			{tabs.map(({ title, icon }) => {
+			{tabs.map(({ title }) => {
 				return (
 					<motion.span
 						key={title}

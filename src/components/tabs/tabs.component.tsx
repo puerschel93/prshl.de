@@ -15,7 +15,6 @@ export interface TabsProps {
 
 export interface Tab {
 	title: string;
-	icon: ReactNode;
 	content: ReactNode;
 }
 
