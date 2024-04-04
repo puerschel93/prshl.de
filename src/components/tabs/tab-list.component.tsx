@@ -1,36 +1,41 @@
 'use client';
 
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { type FC } from 'react';
+import { type Tab } from './tabs.component';
 
 /** Props Interface */
 interface TabListProps {
-	tabTitles: string[];
+	tabs: Tab[];
 	currentTab: string;
 	setCurrentTab: (tab: string) => void;
 }
 
 export const TabList: FC<TabListProps> = ({
-	tabTitles,
+	tabs,
 	currentTab,
 	setCurrentTab,
 }) => {
 	/** Render */
 	return (
 		<div className="flex flex-row gap-4">
-			{tabTitles.map((title) => {
-				const isCurrentTab = title === currentTab;
+			{tabs.map(({ title, icon }) => {
 				return (
-					<p
+					<motion.span
 						key={title}
-						onClick={() => setCurrentTab(title)}
-						className={clsx(
-							'hover:text-white cursor-pointer text-sm',
-							isCurrentTab ? 'text-white' : '',
-						)}
+						className={clsx('flex flex-row gap-1.5 *:text-white')}
+						animate={{
+							opacity: currentTab === title ? 1 : 0.5,
+						}}
 					>
-						{title}
-					</p>
+						<p
+							onClick={() => setCurrentTab(title)}
+							className={clsx('cursor-pointer text-sm')}
+						>
+							{title}
+						</p>
+					</motion.span>
 				);
 			})}
 		</div>

@@ -10,10 +10,13 @@ export interface TabProps {
 }
 
 export interface TabsProps {
-	tabs: {
-		title: string;
-		content: ReactNode;
-	}[];
+	tabs: Tab[];
+}
+
+export interface Tab {
+	title: string;
+	icon: ReactNode;
+	content: ReactNode;
 }
 
 export const Tabs: FC<TabsProps> = ({ tabs }) => {
@@ -24,7 +27,7 @@ export const Tabs: FC<TabsProps> = ({ tabs }) => {
 	return (
 		<div className="flex flex-col flex-grow gap-4">
 			<TabList
-				tabTitles={tabs.map((tab) => tab.title)}
+				tabs={tabs}
 				currentTab={currentTab}
 				setCurrentTab={setCurrentTab}
 			/>

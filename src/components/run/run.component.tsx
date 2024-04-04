@@ -31,7 +31,7 @@ export const Run: FC<Props> = ({ run }) => {
 			</div>
 			<div className="flex flex-row justify-between mt-1 *:text-sm">
 				<p>{run.location}</p>
-				<p>{run.time}</p>
+				<p>{run.time || 'UPCOMING'}</p>
 			</div>
 			<p className="text-primary-500 text-sm">
 				{dayjs(run.date).format('YYYY-MM-DD')}
