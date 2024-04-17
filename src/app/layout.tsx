@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import { Metadata } from 'next';
 import localFont from 'next/font/local';
 
 const grtsk = localFont({
@@ -25,9 +26,21 @@ const _monaspace = localFont({
     variable: '--font-monospace',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
     title: 'PRSHL',
+    description: 'Personal portfolio of Florian Pürschel',
     icons: [{ rel: 'icon', url: '/favicon.ico' }],
+    keywords: [
+        'portfolio',
+        'florian',
+        'pürschel',
+        'prshl',
+        'running',
+        'berlin',
+        'marathon',
+        'software',
+        'development',
+    ],
 };
 
 export default function RootLayout({
