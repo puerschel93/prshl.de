@@ -6,7 +6,7 @@ export const Copyright: FC = () => {
             <p>&copy; {new Date().getFullYear()} Florian Pürschel</p>
             <a
                 href="https://creativecommons.org/licenses/by-nc/4.0/"
-                target="_blank"
+                target="_blank" rel="noreferrer"
             >
                 CC BY-NC 4.0
             </a>

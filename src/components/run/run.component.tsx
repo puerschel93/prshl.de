@@ -26,8 +26,8 @@ export const Run: FC<Props> = ({ run }) => {
             )}
         >
             <div className="flex flex-row justify-between">
-                <h2 className="font-bold uppercase">{run.name}</h2>
-                <p className="text-primary-500">
+                <h2 className="max-w-[70%] font-bold uppercase">{run.name}</h2>
+                <p className="text-right w-[30%] text-primary-500">
                     {run.distance?.toFixed(1)} km
                 </p>
             </div>
@@ -38,7 +38,9 @@ export const Run: FC<Props> = ({ run }) => {
             <p className="text-primary-500 text-sm">
                 {dayjs(run.date).format('YYYY-MM-DD')}
             </p>
-            <p className="line-clamp-4">{run.description}</p>
+            {run.description && (
+                <p className="line-clamp-4">{run.description}</p>
+            )}
         </div>
     );
 };

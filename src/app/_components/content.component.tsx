@@ -1,6 +1,5 @@
 import { Tabs } from '@/components/tabs';
-import { type FC } from 'react';
-import { Projects } from './projects.component';
+import type { FC } from 'react';
 import { RecentRuns } from './recent-runs.component';
 
 export const Content: FC = () => {
@@ -12,10 +11,7 @@ export const Content: FC = () => {
                     title: 'Recent Runs',
                     content: <RecentRuns />,
                 },
-                { title: 'Projects', content: <Projects /> },
-                { title: 'Blog', content: null },
                 'spacer',
-                { title: 'About', content: null },
             ]}
         />
     );

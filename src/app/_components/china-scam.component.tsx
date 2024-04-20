@@ -1,7 +1,7 @@
 'use client';
 
 import { Tooltip } from '@/components/tooltip';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 export const ChinaScam: FC = () => {
     /** Render */

@@ -2,7 +2,7 @@ import { Run } from '@/components/run';
 import { getRecentRuns } from '@/util/sanity';
 import dayjs from 'dayjs';
 import { Fragment, type FC } from 'react';
-import { type Run as RunType } from 'types/sanity';
+import type { Run as RunType } from 'types/sanity';
 
 export const RecentRuns: FC = async () => {
     const runs = await getRecentRuns();
