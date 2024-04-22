@@ -4,7 +4,6 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "prebuild": "npm run lint",
         "build": "next build",
         "dev": "next dev",
         "lint": "biome lint *",
