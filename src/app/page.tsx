@@ -6,7 +6,6 @@ import { MAIN_CONTENT_WIDTH } from "@/util/sizes";
 import { generateRandomBuildNumber } from "@/util/strings";
 import { PortableText } from "@portabletext/react";
 import dayjs from "dayjs";
-import { ChinaScam } from "./_components/china-scam.component";
 import { Content } from "./_components/content.component";
 import { Decoration } from "./_components/decoration.component";
 import { MainWrapper } from "./_components/main-wrapper.component";
@@ -36,9 +35,8 @@ export default async function Home() {
 					</p>
 					<p className="text-primaryGray-600 text-sm">{`Build # ${buildNumber}`}</p>
 				</div>
-				<h1 className="inline-flex flex-row justify-between mb-8 font-bold text-[3rem]">
+				<h1 className="inline-flex flex-row justify-between items-center mb-8 font-bold text-[3rem]">
 					PRSHL
-					<ChinaScam />
 				</h1>
 				<PortableText
 					value={caption.contentDescription}
