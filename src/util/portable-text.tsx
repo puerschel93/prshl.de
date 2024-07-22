@@ -1,3 +1,3 @@
-import type { PortableTextProps } from '@portabletext/react';
+import type { PortableTextProps } from "@portabletext/react";
 
-export const portableTextComponents: PortableTextProps['components'] = {};
+export const portableTextComponents: PortableTextProps["components"] = {};

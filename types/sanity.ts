@@ -1,39 +1,39 @@
 import type {
-    SanityReference,
-    SanityKeyedReference,
-    SanityAsset,
-    SanityImage,
-    SanityFile,
-    SanityGeoPoint,
-    SanityBlock,
-    SanityDocument,
-    SanityImageCrop,
-    SanityImageHotspot,
-    SanityKeyed,
-    SanityImageAsset,
-    SanityImageMetadata,
-    SanityImageDimensions,
-    SanityImagePalette,
-    SanityImagePaletteSwatch,
-} from 'sanity-codegen';
+  SanityReference,
+  SanityKeyedReference,
+  SanityAsset,
+  SanityImage,
+  SanityFile,
+  SanityGeoPoint,
+  SanityBlock,
+  SanityDocument,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch,
+} from "sanity-codegen";
 
 export type {
-    SanityReference,
-    SanityKeyedReference,
-    SanityAsset,
-    SanityImage,
-    SanityFile,
-    SanityGeoPoint,
-    SanityBlock,
-    SanityDocument,
-    SanityImageCrop,
-    SanityImageHotspot,
-    SanityKeyed,
-    SanityImageAsset,
-    SanityImageMetadata,
-    SanityImageDimensions,
-    SanityImagePalette,
-    SanityImagePaletteSwatch,
+  SanityReference,
+  SanityKeyedReference,
+  SanityAsset,
+  SanityImage,
+  SanityFile,
+  SanityGeoPoint,
+  SanityBlock,
+  SanityDocument,
+  SanityImageCrop,
+  SanityImageHotspot,
+  SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch,
 };
 
 /**
@@ -42,68 +42,68 @@ export type {
  *
  */
 export interface Run extends SanityDocument {
-    _type: 'run';
+  _type: "run";
 
-    /**
-     * Name — `string`
-     *
-     *
-     */
-    name?: string;
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string;
 
-    /**
-     * Link — `string`
-     *
-     *
-     */
-    link?: string;
+  /**
+   * Link — `string`
+   *
+   *
+   */
+  link?: string;
 
-    /**
-     * Date — `date`
-     *
-     *
-     */
-    date?: string;
+  /**
+   * Date — `date`
+   *
+   *
+   */
+  date?: string;
 
-    /**
-     * Location — `string`
-     *
-     *
-     */
-    location?: string;
+  /**
+   * Location — `string`
+   *
+   *
+   */
+  location?: string;
 
-    /**
-     * Distance — `number`
-     *
-     *
-     */
-    distance?: number;
+  /**
+   * Distance — `number`
+   *
+   *
+   */
+  distance?: number;
 
-    /**
-     * Time — `string`
-     *
-     *
-     */
-    time?: string;
+  /**
+   * Time — `string`
+   *
+   *
+   */
+  time?: string;
 
-    /**
-     * Description — `text`
-     *
-     *
-     */
-    description?: string;
+  /**
+   * Description — `text`
+   *
+   *
+   */
+  description?: string;
 
-    /**
-     * Image — `image`
-     *
-     *
-     */
-    image?: {
-        _type: 'image';
-        asset: SanityReference<SanityImageAsset>;
-        crop?: SanityImageCrop;
-        hotspot?: SanityImageHotspot;
-    };
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: "image";
+    asset: SanityReference<SanityImageAsset>;
+    crop?: SanityImageCrop;
+    hotspot?: SanityImageHotspot;
+  };
 }
 
 /**
@@ -112,21 +112,21 @@ export interface Run extends SanityDocument {
  *
  */
 export interface Social extends SanityDocument {
-    _type: 'social';
+  _type: "social";
 
-    /**
-     * Name — `string`
-     *
-     *
-     */
-    name?: 'x' | 'instagram' | 'github';
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: "x" | "instagram" | "github";
 
-    /**
-     * URL — `string`
-     *
-     *
-     */
-    url?: string;
+  /**
+   * URL — `string`
+   *
+   *
+   */
+  url?: string;
 }
 
 /**
@@ -135,21 +135,58 @@ export interface Social extends SanityDocument {
  *
  */
 export interface Content extends SanityDocument {
-    _type: 'content';
+  _type: "content";
 
-    /**
-     * Type — `string`
-     *
-     *
-     */
-    type?: 'caption';
+  /**
+   * Type — `string`
+   *
+   *
+   */
+  type?: "caption";
 
-    /**
-     * Content Description — `array`
-     *
-     *
-     */
-    contentDescription?: Array<SanityKeyed<SanityBlock>>;
+  /**
+   * Content Description — `array`
+   *
+   *
+   */
+  contentDescription?: Array<SanityKeyed<SanityBlock>>;
 }
 
-export type Documents = Run | Social | Content;
+/**
+ * uses
+ *
+ *
+ */
+export interface Uses extends SanityDocument {
+  _type: "uses";
+
+  /**
+   * Index — `number`
+   *
+   *
+   */
+  index?: number;
+
+  /**
+   * Category — `string`
+   *
+   *
+   */
+  category?: string;
+
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string;
+
+  /**
+   * Items — `array`
+   *
+   *
+   */
+  items?: Array<SanityKeyed<string>>;
+}
+
+export type Documents = Run | Social | Content | Uses;
