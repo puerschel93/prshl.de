@@ -26,7 +26,9 @@ export const Run: FC<Props> = ({ run }) => {
 			)}
 		>
 			<div className="flex flex-row justify-between">
-				<h2 className="max-w-[70%] font-bold uppercase">{run.name}</h2>
+				<h2 className="max-w-[70%] font-bold text-left uppercase">
+					{run.name}
+				</h2>
 				<p className="text-right w-[30%] text-primary-500">
 					{run.distance?.toFixed(1)} km
 				</p>
