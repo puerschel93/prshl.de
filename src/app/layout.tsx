@@ -1,4 +1,4 @@
-
+import { Lenis } from "@/components/providers";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -52,7 +52,9 @@ export default function RootLayout({
 	/** Render */
 	return (
 		<html lang="en">
-			<body className={grtsk.className}>{children}</body>
+			<Lenis>
+				<body className={grtsk.className}>{children}</body>
+			</Lenis>
 		</html>
 	);
 }
