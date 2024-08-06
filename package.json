@@ -10,6 +10,7 @@
         "format": "biome format * --write",
         "start": "next start",
         "types": "npx sanity-codegen",
+        "predeploy": "npm run lint && npm run format && npm run build",
         "deploy": "npm run build && vercel --prod"
     },
     "dependencies": {
