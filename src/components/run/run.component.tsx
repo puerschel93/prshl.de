@@ -40,7 +40,7 @@ export const Run: FC<Props> = ({ run }) => {
 			<p className="text-primary-500 text-sm">
 				{dayjs(run.date).format("YYYY-MM-DD")}
 			</p>
-			{run.description && <p className="line-clamp-4">{run.description}</p>}
+			{run.description && <p>{run.description}</p>}
 		</div>
 	);
 };
