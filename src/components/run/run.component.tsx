@@ -1,9 +1,9 @@
 "use client";
 
+import type { Run as SanityRun } from "@/types/sanity";
 import { dayjs } from "@/util/date";
 import clsx from "clsx";
 import type { FC } from "react";
-import type { Run as SanityRun } from "types/sanity";
 
 /** Props Interface */
 interface Props {

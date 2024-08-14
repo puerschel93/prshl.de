@@ -13,11 +13,11 @@ export const content = defineType({
                 list: [{ title: 'Caption', value: 'caption' }],
             },
         }),
-        defineField({
+        {
             name: 'contentDescription',
             title: 'Content Description',
             type: 'array',
             of: [{ type: 'block' }],
-        }),
+        }
     ],
 });

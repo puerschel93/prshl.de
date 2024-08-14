@@ -5,7 +5,5 @@ export const Uses: FC = async () => {
 	const uses = await getUses();
 
 	/** Render */
-	return (
-		<p>TBF</p>
-	)
+	return <p>TBF</p>;
 };

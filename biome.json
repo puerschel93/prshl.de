@@ -4,7 +4,11 @@
 		"enabled": true
 	},
 	"files": {
-		"include": ["src/**/*.ts", "src/**/*.tsx"]
+		"include": ["src/**/*.ts", "src/**/*.tsx"],
+		"ignore": ["src/types/sanity.ts"]
+	},
+	"formatter": {
+		"enabled": true
 	},
 	"linter": {
 		"enabled": true,

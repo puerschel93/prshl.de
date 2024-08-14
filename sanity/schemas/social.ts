@@ -14,6 +14,7 @@ export const social = defineType({
                     { title: 'X', value: 'x' },
                     { title: 'Instagram', value: 'instagram' },
                     { title: 'GitHub', value: 'github' },
+                    { title: 'Strava', value: 'strava' }
                 ],
             },
         }),

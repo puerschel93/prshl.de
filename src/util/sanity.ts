@@ -1,8 +1,8 @@
+import type { Content, Run, Social, Uses } from "@/types/sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import moment from "moment";
 import { createClient } from "next-sanity";
-import type { Content, Run, Social, Uses } from "types/sanity";
 
 const client = createClient({
 	projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -24,9 +24,7 @@ export async function getRecentRuns(): Promise<Run[]> {
 }
 
 export async function getUses(): Promise<Uses[]> {
-	return await client.fetch(
-		`*[_type == "uses"] | order(index asc)`,
-	);
+	return await client.fetch(`*[_type == "uses"] | order(index asc)`);
 }
 
 export async function getSocials(): Promise<Social[]> {

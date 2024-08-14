@@ -10,7 +10,7 @@ import { Content } from "./_components/content.component";
 import { Decoration } from "./_components/decoration.component";
 import { MainWrapper } from "./_components/main-wrapper.component";
 
-export const revalidate = 3600;
+export const revalidate = 1;
 
 export default async function Home() {
 	/** Fetch */

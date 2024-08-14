@@ -1,13 +1,14 @@
+import type { Social } from "@/types/sanity";
 import { getSocials } from "@/util/sanity";
 import Link from "next/link";
 import type { FC } from "react";
 import {
 	TbBrandGithub,
 	TbBrandInstagram,
+	TbBrandStrava,
 	TbBrandX,
 	TbRectangle,
 } from "react-icons/tb";
-import type { Social } from "types/sanity";
 
 export const Socials: FC = async () => {
 	/** Functions */
@@ -37,6 +38,8 @@ function mapSocialNameToIcon(social: Social["name"]) {
 			return TbBrandInstagram;
 		case "github":
 			return TbBrandGithub;
+		case "strava":
+			return TbBrandStrava;
 		default:
 			return TbRectangle;
 	}
