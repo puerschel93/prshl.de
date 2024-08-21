@@ -5,14 +5,5 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import type { FC } from "react";
 
 export const Lenis: FC<ChildrenProps> = ({ children }) => {
-	return (
-		<ReactLenis
-			root
-			options={{
-				lerp: 0.05,
-			}}
-		>
-			{children}
-		</ReactLenis>
-	);
+	return <ReactLenis root>{children}</ReactLenis>;
 };
