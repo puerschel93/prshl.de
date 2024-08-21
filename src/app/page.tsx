@@ -4,7 +4,6 @@ import { portableTextComponents } from "@/util/portable-text";
 import { getContent } from "@/util/sanity";
 import { MAIN_CONTENT_WIDTH } from "@/util/sizes";
 import { PortableText } from "@portabletext/react";
-import { Fragment } from "react";
 import { Content } from "./_components/content.component";
 import { Decoration } from "./_components/decoration.component";
 import { PaperMeta } from "./_components/paper-meta.component";
@@ -20,7 +19,7 @@ export default async function Home() {
 
 	/** Render */
 	return (
-		<Fragment>
+		<main className="flex justify-center pt-[10vh] sm:pt-[25vh] w-screen min-h-[100vh]">
 			<Decoration />
 			<Socials />
 			<div
@@ -37,6 +36,6 @@ export default async function Home() {
 				<Content />
 				<Copyright />
 			</div>
-		</Fragment>
+		</main>
 	);
 }

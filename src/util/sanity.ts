@@ -19,7 +19,7 @@ export async function fetchSanityImage(image: SanityImageSource | undefined) {
 
 export async function getRecentRuns(): Promise<Run[]> {
 	return await client.fetch(
-		`*[_type == "run"] | order(date desc) {name, link, date, location, distance, time, elevation, description, image}`,
+		`*[_type == "run"] | order(date desc) {name, _id, link, date, location, distance, time, elevation, description, image}`,
 	);
 }
 

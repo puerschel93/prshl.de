@@ -30,21 +30,16 @@ export const run = defineType({
             type: 'number',
             title: 'Distance',
         }),
-        {
+        defineField({
             name: 'time',
             type: 'string',
             title: 'Time',
             placeholder: '00:00:00',
-        },
+        }),
         defineField({
             name: 'description',
             type: 'text',
             title: 'Description',
-        }),
-        defineField({
-            name: 'image',
-            type: 'image',
-            title: 'Image',
-        }),
+        })  
     ],
 });
