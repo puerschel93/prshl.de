@@ -26,7 +26,7 @@
         @apply font-bold text-[3rem]
     }
 
-    h2 {
+    h3 {
         @apply font-bold text-left uppercase;
     }
 
@@ -34,8 +34,8 @@
         @apply border-dashed;
     }
 
-    a:not(:has(svg)):hover {
-        @apply border-b border-dotted;
+    a:not(:has(svg)) {
+        @apply underline underline-offset-[6px];
     }
 
     del {

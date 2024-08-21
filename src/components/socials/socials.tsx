@@ -21,7 +21,12 @@ export const Socials: FC = async () => {
 				const Icon = mapSocialNameToIcon(social.name);
 				if (!social.url) return null;
 				return (
-					<Link href={social.url} key={social._id} target="_blank">
+					<Link
+						href={social.url}
+						key={social._id}
+						target="_blank"
+						aria-label={social.name}
+					>
 						<Icon size={22} className="hover:stroke-primary-500" />
 					</Link>
 				);
