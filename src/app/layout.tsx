@@ -29,7 +29,7 @@ const _monaspace = localFont({
 
 export const metadata: Metadata = {
 	title: "PRSHL",
-	description: "Personal portfolio of Florian Pürschel",
+	description: "Personal portfolio of Florian Pürschel from Berlin, Germany.",
 	icons: [{ rel: "icon", url: "/favicon.ico" }],
 	keywords: [
 		"portfolio",

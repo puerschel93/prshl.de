@@ -26,9 +26,9 @@ export const RecentRuns: FC = async () => {
 		<div className="flex flex-col">
 			{runsByYear.map((yearSection) => (
 				<Fragment key={yearSection.year.toFixed(2)}>
-					<h2 className="-mb-12 pt-12 text-primary-500 -translate-y-4 pointer-events-none">
+					<h3 className="-mb-12 pt-12 text-primary-500 -translate-y-4 pointer-events-none">
 						{yearSection.year}
-					</h2>
+					</h3>
 					{yearSection.runs.map((run) => {
 						return <Run run={run} key={run._id} />;
 					})}

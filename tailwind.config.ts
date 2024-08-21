@@ -1,6 +1,20 @@
 import { type Config } from 'tailwindcss';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
+const salmon = {
+	50: "#fff1ee",
+	100: "#fed4cc",
+	200: "#feb8aa",
+	300: "#fd9b87",
+	400: "#fc7e65",
+	500: "#fc7054",
+	600: "#e3654c",
+	700: "#ca5a43",
+	800: "#974332",
+	900: "#4c2219",
+	950: "#2c110c",
+}
+
 const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
@@ -11,6 +25,7 @@ export default {
             colors: {
                 primary: colors.emerald,
                 primaryGray: colors.neutral,
+                salmon
             },
             fontFamily: {
                 grtsk: ['var(--font-grtsk)', ...fontFamily.sans],
