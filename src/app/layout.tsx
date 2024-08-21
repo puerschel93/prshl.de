@@ -53,7 +53,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<Lenis>
-				<body className={grtsk.className}>{children}</body>
+				<body className={grtsk.className}>
+					<main className="flex justify-center pt-[10vh] sm:pt-[25vh] w-screen min-h-[100vh]">
+						{children}
+					</main>
+				</body>
 			</Lenis>
 		</html>
 	);

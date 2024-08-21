@@ -1,5 +1,3 @@
-"use client";
-
 import type { Run as SanityRun } from "@/types/sanity";
 import { dayjs } from "@/util/date";
 import clsx from "clsx";
@@ -11,8 +9,6 @@ interface Props {
 }
 
 export const Run: FC<Props> = ({ run }) => {
-	// const sanityImage = useSanityImage(run.image?.asset._ref);
-
 	/** Computed */
 	const isUpcoming = run.time === null;
 
@@ -21,7 +17,6 @@ export const Run: FC<Props> = ({ run }) => {
 		<div
 			className={clsx(
 				"flex flex-col gap-2 border-primaryGray-800 py-16 not-last:border-b-[0.5px]",
-				isUpcoming ? "opacity-15" : "opacity-100",
 				"hover:opacity-100 transition-opacity",
 			)}
 		>
@@ -31,13 +26,11 @@ export const Run: FC<Props> = ({ run }) => {
 					{run.distance?.toFixed(1)} km
 				</p>
 			</div>
-			<div className="flex flex-row justify-between mt-1 *:text-sm">
+			<div className="flex flex-row justify-between mt-1">
 				<p>{run.location}</p>
 				<p>{run.time ?? "UPCOMING"}</p>
 			</div>
-			<p className="text-primary-500 text-sm">
-				{dayjs(run.date).format("YYYY-MM-DD")}
-			</p>
+			<p className="text-primary-500">{dayjs(run.date).format("YYYY-MM-DD")}</p>
 			{run.description && <p>{run.description}</p>}
 		</div>
 	);

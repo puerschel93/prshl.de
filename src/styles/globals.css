@@ -15,7 +15,7 @@
     }
 
     p {
-        @apply inline text-primaryGray-400;
+        @apply inline text-primaryGray-400 text-sm;
     }
 
     a {
