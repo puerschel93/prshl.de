@@ -24,7 +24,7 @@ export default {
         extend: {
             colors: {
                 primary: colors.emerald,
-                primaryGray: colors.neutral,
+                primaryGray: colors.zinc,
                 salmon
             },
             fontFamily: {

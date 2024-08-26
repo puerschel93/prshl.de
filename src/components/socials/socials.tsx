@@ -27,7 +27,7 @@ export const Socials: FC = async () => {
 						target="_blank"
 						aria-label={social.name}
 					>
-						<Icon size={22} className="hover:stroke-primary-500" />
+						<Icon size={22} />
 					</Link>
 				);
 			})}
