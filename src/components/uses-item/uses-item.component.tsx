@@ -9,9 +9,14 @@ interface UsesItem {
 
 export const UsesItem: FC<UsesItem> = ({ item }) => {
 	return (
-		<div className="flex flex-col gap-4">
+		<div
+			className="flex flex-col gap-8 sm:grid pt-12"
+			style={{
+				gridTemplateColumns: "1fr 2fr",
+			}}
+		>
 			<h3>{item.category}</h3>
-			<div className="flex flex-col gap-6">
+			<div className="flex flex-col gap-12">
 				{item.items?.map((use) => (
 					<Use use={use} key={use._key} />
 				))}

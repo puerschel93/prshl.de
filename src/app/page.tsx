@@ -9,7 +9,7 @@ import { Decoration } from "./_components/decoration.component";
 import { PaperMeta } from "./_components/paper-meta.component";
 import { Uses } from "./_components/uses.component";
 
-export const revalidate = 3600;
+export const revalidate = 1;
 
 export default async function Home() {
 	/** Fetch */
