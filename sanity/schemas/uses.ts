@@ -14,7 +14,7 @@ export const uses = defineType({
       type: 'string',
       title: 'Category',
     }),
-    defineField({
+    {
       name: 'items',
       type: 'array',
       title: 'Items',
@@ -31,6 +31,6 @@ export const uses = defineType({
         }
         ]
       }]
-    })
+    }
   ]
 });

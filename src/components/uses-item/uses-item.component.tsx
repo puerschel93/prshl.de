@@ -15,7 +15,7 @@ export const UsesItem: FC<UsesItem> = ({ item }) => {
 				gridTemplateColumns: "1fr 2fr",
 			}}
 		>
-			<h3>{item.category}</h3>
+			<h2>{item.category}</h2>
 			<div className="flex flex-col gap-12">
 				{item.items?.map((use) => (
 					<Use use={use} key={use._key} />

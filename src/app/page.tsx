@@ -7,9 +7,10 @@ import { PortableText } from "@portabletext/react";
 import { Content } from "./_components/content.component";
 import { Decoration } from "./_components/decoration.component";
 import { PaperMeta } from "./_components/paper-meta.component";
+import { Projects } from "./_components/projects.component";
 import { Uses } from "./_components/uses.component";
 
-export const revalidate = 1;
+export const revalidate = 3600;
 
 export default async function Home() {
 	/** Fetch */
@@ -28,13 +29,15 @@ export default async function Home() {
 				style={{ width: MAIN_CONTENT_WIDTH }}
 			>
 				<PaperMeta />
-				<h1>PRSHL</h1>
+				<h1 className="font-grtsk">PRSHL</h1>
 				<PortableText
 					value={caption.contentDescription}
 					components={portableTextComponents}
 				/>
 				<hr />
 				<Content />
+				<hr />
+				<Projects />
 				<hr />
 				<Uses />
 				<hr />

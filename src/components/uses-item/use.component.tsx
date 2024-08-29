@@ -9,7 +9,9 @@ interface UseProps {
 export const Use: FC<UseProps> = ({ use }) => {
 	return (
 		<div className="flex flex-col gap-2 w-full">
-			<p className="font-semibold text-left text-white uppercase">{use.name}</p>
+			<h3 className="font-semibold text-left text-white uppercase">
+				{use.name}
+			</h3>
 			<p>{use.description}</p>
 		</div>
 	);
