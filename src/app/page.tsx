@@ -7,7 +7,6 @@ import { PortableText } from "@portabletext/react";
 import { Content } from "./_components/content.component";
 import { Decoration } from "./_components/decoration.component";
 import { PaperMeta } from "./_components/paper-meta.component";
-import { Projects } from "./_components/projects.component";
 import { Uses } from "./_components/uses.component";
 
 export const revalidate = 3600;
@@ -36,8 +35,6 @@ export default async function Home() {
 				/>
 				<hr />
 				<Content />
-				<hr />
-				<Projects />
 				<hr />
 				<Uses />
 				<hr />
